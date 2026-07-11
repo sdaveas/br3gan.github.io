@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gall3ry</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="mostly bw photos for fun">
+<meta property="og:title" content="photos">
+<meta property="og:url" content="https://br3gan.com/photos">
+<meta property="og:description" content="mostly bw photos for fun">
+</head>
+<body>
+<div class="wrap">
+<nav>
+<a href="./">br3</a>
+<a href="./gall3ry.html" class="active">gall3ry</a>
+<a href="./b3ats.html">b3ats</a>
+<a href="./news.html">my n3ws</a>
+</nav>
+<div class="gallery" id="gallery">
+<img src="./assets/photos/P7190106.JPG" alt="photo">
+<img src="./assets/photos/P7190121.JPG" alt="photo">
+<img src="./assets/photos/P7190092.JPG" alt="photo">
+<img src="./assets/photos/P7190098.JPG" alt="photo">
+<img src="./assets/photos/P7190123.JPG" alt="photo">
+<img src="./assets/photos/P8080186.JPG" alt="photo">
+</div>
+<script>
+var imgs=document.querySelectorAll('#gallery img'),cur=-1;
+function show(i){if(cur>=0)imgs[cur].classList.remove('zoom');cur=(i+imgs.length)%imgs.length;imgs[cur].classList.add('zoom')}
+imgs.forEach(function(img,i){img.onclick=function(){if(img.classList.contains('zoom')){img.classList.remove('zoom');cur=-1}else show(i)}});
+document.onkeydown=function(e){if(cur<0)return;if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);if(e.key==='Escape'){imgs[cur].classList.remove('zoom');cur=-1}};
+</script>
+</div>
+</body>
+</html>
