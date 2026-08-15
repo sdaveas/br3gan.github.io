@@ -17,6 +17,11 @@
 <a href="./gall3ry.html" class="active">gall3ry</a>
 <a href="./b3ats.html">b3ats</a>
 </nav>
+<div class="grid-toggle">
+<button data-cols="1" class="active">1</button>
+<button data-cols="2">2</button>
+<button data-cols="3">3</button>
+</div>
 <div class="gallery" id="gallery">
 <img src="./assets/photos/DSC_0455_Original.JPG" alt="photo">
 <img src="./assets/photos/P8150115.JPG" alt="photo">
@@ -28,6 +33,10 @@
 <img src="./assets/photos/P8080186.JPG" alt="photo">
 </div>
 <script>
+var g=document.getElementById('gallery');
+document.querySelectorAll('.grid-toggle button').forEach(function(b){
+b.onclick=function(){document.querySelectorAll('.grid-toggle button').forEach(function(x){x.classList.remove('active')});b.classList.add('active');g.classList.remove('cols-2','cols-3');if(b.dataset.cols!='1')g.classList.add('cols-'+b.dataset.cols)}
+});
 var imgs=document.querySelectorAll('#gallery img'),cur=-1;
 function show(i){if(cur>=0)imgs[cur].classList.remove('zoom');cur=(i+imgs.length)%imgs.length;imgs[cur].classList.add('zoom')}
 imgs.forEach(function(img,i){img.onclick=function(){if(img.classList.contains('zoom')){img.classList.remove('zoom');cur=-1}else show(i)}});

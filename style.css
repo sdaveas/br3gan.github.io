@@ -11,6 +11,11 @@ p{margin-bottom:1rem}
 a{color:var(--fg)}
 img{max-width:100%;height:auto;display:block;margin-bottom:1.5rem;border-radius:2px}
 .gallery{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.gallery.cols-2{grid-template-columns:repeat(2,1fr)}
+.gallery.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid-toggle{display:flex;gap:.5rem;margin-bottom:1.5rem}
+.grid-toggle button{background:none;border:1px solid var(--dim);color:var(--dim);padding:.25rem .75rem;border-radius:2px;cursor:pointer;font-size:.85rem}
+.grid-toggle button.active{color:var(--fg);border-color:var(--fg)}
 .gallery img{margin:0;cursor:zoom-in}
 .gallery img.zoom{position:fixed;inset:0;width:auto;height:auto;max-width:90vw;max-height:90vh;margin:auto;object-fit:contain;z-index:999;cursor:zoom-out;background:rgba(0,0,0,.9)}
 .contact{list-style:none}
